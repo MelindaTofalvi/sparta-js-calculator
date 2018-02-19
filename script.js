@@ -2,13 +2,13 @@ var whichCalculator = prompt("Which calculator do you want to use? (b)asic, (a)d
 
 if (whichCalculator == "a" || whichCalculator == "b" || whichCalculator == "c" || whichCalculator == "d") {
 	if(whichCalculator == "c"){
-	var weight = prompt("Tell me your weight in kilograms please.");
-	var height = prompt("Tell me your height in metres please");
-	alert("Your BMI is " + weight/height/height);
+		var weight = prompt("Tell me your weight in kilograms please.");
+		var height = prompt("Tell me your height in metres please");
+		alert("Your BMI is " + weight/height/height);
 
 	} else if (whichCalculator == "a" || whichCalculator == "b") {
-		var firstNum = prompt("Type a number");
-		var secondNum = prompt("Type another number");
+		var firstNum = parseInt(prompt("Type a number"));
+		var secondNum = parseInt(prompt("Type another number"));
 
 		if (whichCalculator == "b") {
 			var whichOperator = prompt("Should I (1)add, (2)multiple, (3)divide or (4)subtract?");
@@ -48,7 +48,20 @@ if (whichCalculator == "a" || whichCalculator == "b" || whichCalculator == "c" |
 			}
 		} 
 	} else{
-
+		var distance = prompt("How many miles are you plannning to travel?");
+		var mpg = prompt("Tell me the fuel efficiency(mpg)");
+		var cost = prompt("Tell me the cost per gallon");
+		var speed = prompt("Tell me the car's average speed in miles per hour");
+		if (mpg > 60) {
+			for (var i = 61; i <= mpg; i++) {
+				mpg -= 2;
+			}
+			if(mpg <= 0){
+				mpg = 1;
+			}
+		}
+		alert("Your trip will take " + distance/speed + " hours and cost GBP " + distance/mpg*cost);
+		console.log(mpg);
 	}
 }else{
 	alert("Not valid!");
